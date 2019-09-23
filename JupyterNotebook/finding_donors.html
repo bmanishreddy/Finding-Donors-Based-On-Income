@@ -15135,10 +15135,10 @@ F-score on testing data: 0.6949
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">X_test_reduced</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_test_reduced</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -15151,139 +15151,82 @@ F-score on testing data: 0.6949
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[24]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>            age  hours-per-week  capital-gain  education-num  \
-41387  0.082192        0.448980      0.000000       0.733333   
-35278  0.219178        0.551020      0.000000       0.533333   
-26950  0.301370        0.377551      0.000000       0.600000   
-29133  0.369863        0.397959      0.000000       0.400000   
-41794  0.191781        0.397959      0.000000       0.533333   
-39744  0.630137        0.397959      0.000000       0.533333   
-32755  0.123288        0.397959      0.000000       0.533333   
-6016   0.109589        0.397959      0.888900       0.666667   
-43034  0.054795        0.346939      0.000000       0.600000   
-12446  0.246575        0.397959      0.000000       0.800000   
-36702  0.068493        0.000000      0.000000       0.533333   
-15291  0.794521        0.295918      0.000000       0.600000   
-5752   0.493151        0.397959      0.000000       0.333333   
-11009  0.273973        0.448980      0.000000       0.600000   
-17770  0.150685        0.173469      0.000000       1.000000   
-4413   0.232877        0.448980      0.000000       0.533333   
-26405  0.342466        0.244898      0.000000       0.533333   
-2632   0.109589        0.295918      0.000000       0.800000   
-38848  0.534247        0.397959      0.000000       0.533333   
-36022  0.164384        0.397959      0.772653       0.533333   
-9313   0.561644        0.397959      0.000000       0.266667   
-3860   0.260274        0.479592      0.000000       0.733333   
-22860  0.095890        0.346939      0.000000       0.400000   
-42921  0.095890        0.397959      0.000000       0.533333   
-31320  0.219178        0.397959      0.000000       0.533333   
-3432   0.178082        0.295918      0.000000       0.600000   
-36834  0.287671        0.602041      0.000000       0.933333   
-26649  0.452055        0.142857      0.000000       0.133333   
-84     0.273973        0.397959      0.000000       0.600000   
-33113  0.232877        0.295918      0.000000       0.333333   
-...         ...             ...           ...            ...   
-22245  0.465753        0.397959      0.000000       0.533333   
-44278  0.383562        0.295918      0.000000       0.533333   
-33360  0.630137        0.397959      0.000000       0.866667   
-26230  0.342466        0.602041      0.000000       0.933333   
-21180  0.589041        0.469388      0.000000       0.600000   
-6798   0.273973        0.448980      0.000000       0.533333   
-33733  0.232877        0.397959      0.000000       0.466667   
-35400  0.383562        0.397959      0.000000       0.466667   
-42963  0.356164        0.469388      0.000000       0.533333   
-6909   0.109589        0.244898      0.000000       0.533333   
-16260  0.397260        0.448980      0.000000       0.533333   
-21270  0.616438        0.397959      0.000000       0.800000   
-29900  0.164384        0.479592      0.000000       0.600000   
-5660   0.301370        0.397959      0.000000       0.733333   
-20926  0.082192        0.346939      0.000000       0.600000   
-19215  0.534247        0.397959      0.000000       0.266667   
-31158  0.150685        0.346939      0.000000       0.533333   
-14239  0.315068        0.602041      0.000000       0.533333   
-20552  0.575342        0.397959      0.000000       0.266667   
-16146  0.082192        0.397959      0.000000       0.533333   
-40967  0.452055        0.653061      0.772653       0.800000   
-32159  0.356164        0.346939      0.000000       0.800000   
-22453  0.164384        0.448980      0.000000       0.733333   
-15326  0.150685        0.448980      0.000000       0.600000   
-5603   0.315068        0.397959      0.000000       0.266667   
-33607  0.164384        0.377551      0.690357       0.533333   
-15446  0.041096        0.540816      0.000000       0.600000   
-6654   0.068493        0.397959      0.000000       0.533333   
-34957  0.287671        0.091837      0.000000       0.600000   
-9025   0.232877        0.448980      0.000000       0.800000   
 
-       relationship_ Husband  
-41387                      0  
-35278                      1  
-26950                      0  
-29133                      0  
-41794                      1  
-39744                      1  
-32755                      0  
-6016                       0  
-43034                      0  
-12446                      0  
-36702                      0  
-15291                      0  
-5752                       1  
-11009                      0  
-17770                      0  
-4413                       1  
-26405                      0  
-2632                       0  
-38848                      1  
-36022                      1  
-9313                       0  
-3860                       1  
-22860                      0  
-42921                      0  
-31320                      0  
-3432                       1  
-36834                      0  
-26649                      0  
-84                         0  
-33113                      0  
-...                      ...  
-22245                      0  
-44278                      1  
-33360                      0  
-26230                      1  
-21180                      0  
-6798                       1  
-33733                      0  
-35400                      0  
-42963                      0  
-6909                       0  
-16260                      0  
-21270                      1  
-29900                      0  
-5660                       0  
-20926                      0  
-19215                      0  
-31158                      0  
-14239                      1  
-20552                      1  
-16146                      0  
-40967                      1  
-32159                      0  
-22453                      0  
-15326                      0  
-5603                       1  
-33607                      1  
-15446                      0  
-6654                       0  
-34957                      0  
-9025                       1  
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-[9045 rows x 5 columns]
-</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>hours-per-week</th>
+      <th>capital-gain</th>
+      <th>education-num</th>
+      <th>relationship_ Husband</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>41387</th>
+      <td>0.082192</td>
+      <td>0.448980</td>
+      <td>0.0</td>
+      <td>0.733333</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>35278</th>
+      <td>0.219178</td>
+      <td>0.551020</td>
+      <td>0.0</td>
+      <td>0.533333</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>26950</th>
+      <td>0.301370</td>
+      <td>0.377551</td>
+      <td>0.0</td>
+      <td>0.600000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>29133</th>
+      <td>0.369863</td>
+      <td>0.397959</td>
+      <td>0.0</td>
+      <td>0.400000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>41794</th>
+      <td>0.191781</td>
+      <td>0.397959</td>
+      <td>0.0</td>
+      <td>0.533333</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -15292,7 +15235,7 @@ F-score on testing data: 0.6949
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!!</span>jupyter nbconvert *.ipynb
@@ -15308,14 +15251,14 @@ F-score on testing data: 0.6949
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[21]:</div>
+    <div class="prompt output_prompt">Out[25]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>[&#39;[NbConvertApp] Converting notebook finding_donors.ipynb to html&#39;,
- &#39;[NbConvertApp] Writing 493681 bytes to finding_donors.html&#39;]</pre>
+ &#39;[NbConvertApp] Writing 4084678 bytes to finding_donors.html&#39;]</pre>
 </div>
 
 </div>
