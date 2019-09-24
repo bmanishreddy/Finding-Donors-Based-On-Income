@@ -14,7 +14,11 @@ class LogTransform(BaseEstimator,TransformerMixin):
         else:
             self.variables = variables
     def fit(self,X,y=None):
-        
-        return
-    def transform(self):
-        return
+
+
+        return self
+    def transform(self,X):
+        X = X.copy()
+        X[feature] = X[feature].apply(lambda x: np.log(x + 1))
+
+        return X
