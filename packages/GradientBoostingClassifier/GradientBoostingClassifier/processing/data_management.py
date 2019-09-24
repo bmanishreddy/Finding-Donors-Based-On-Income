@@ -5,6 +5,8 @@ from sklearn.pipeline import Pipeline
 from GradientBoostingClassifier.config import config
 from GradientBoostingClassifier import __version__ as _version
 
+
+#_version = 1.0
 #import logging
 
 

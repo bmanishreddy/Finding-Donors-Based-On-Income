@@ -2,9 +2,9 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 
 from GradientBoostingClassifier import pipeline
-#from GradientBoostingClassifier.processing.data_management import (
-#    load_dataset, save_pipeline)
-#from GradientBoostingClassifier.config import config
+from GradientBoostingClassifier.processing.data_management import (
+    load_dataset, save_pipeline)
+from GradientBoostingClassifier.config import config
 #from GradientBoostingClassifier import __version__ as _version
 
 #import logging
@@ -28,11 +28,11 @@ def run_training() -> None:
 
     # transform the target
 
-    pipeline.price_pipe.fit(X_train[config.FEATURES],
+    pipeline.celcius.fit(X_train[config.FEATURES],
                             y_train)
 
     #_logger.info(f'saving model version: {_version}')
-    save_pipeline(pipeline_to_persist=pipeline.price_pipe)
+    save_pipeline(pipeline_to_persist=pipeline.celcius)
 
 
 if __name__ == '__main__':

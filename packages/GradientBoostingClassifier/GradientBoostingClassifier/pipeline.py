@@ -13,5 +13,5 @@ from GradientBoostingClassifier.config import config
 
 celcius = Pipeline(
     [
-        ('categorical_imputer',
-            pp.CategoricalImputer(variables=config.CATEGORICAL_VARS_WITH_NA))])
+        ('LogTransform',
+            pp.LogTransform(variables=config.log_transform))])
