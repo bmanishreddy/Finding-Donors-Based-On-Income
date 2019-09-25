@@ -22,15 +22,17 @@ DATASET_DIR = PACKAGE_ROOT / 'datasets'
 DATA_FILE = 'census.csv'
 
 
-TARGET = 'income'
+target = 'income'
 TRAINED_MODEL_DIR = PACKAGE_ROOT / 'trained_models'
 
 #TRAINED_MODEL_DIR = PACKAGE_ROOT / 'trained_models'
 
 #numerical Variable
-FEATURES=['age','hours-per-week','capital-gain','education-num','relationship','marital-status','income']
+features=['age','hours-per-week','capital-gain','education-num','relationship','marital-status','income']
 
 numerical = ['age','hours-per-week','capital-gain','education-num']
+
+stringfeatures = ['relationship','marital-status']
 
 log_transform = ['capital-gain']
 

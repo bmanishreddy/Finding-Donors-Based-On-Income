@@ -21,14 +21,18 @@ def run_training() -> None:
 
     # divide train and test
     X_train, X_test, y_train, y_test = train_test_split(
-        data[config.FEATURES],
-        data[config.TARGET],
+        data[config.features],
+        data[config.target],
         test_size=0.1,
         random_state=0)  # we are setting the seed here
 
-    # transform the target
+    y_train = y_train.replace({'<=50K': 0, '>50K': 1})
+    y_test = y_test.replace({'<=50K': 0, '>50K': 1})
 
-    pipeline.celcius.fit(X_train[config.FEATURES],
+    # transform the target
+    #print(y_train)
+
+    pipeline.celcius.fit(X_train[config.features],
                             y_train)
 
     #_logger.info(f'saving model version: {_version}')
