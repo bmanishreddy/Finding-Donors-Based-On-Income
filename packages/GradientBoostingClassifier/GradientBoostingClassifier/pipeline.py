@@ -11,7 +11,7 @@ from sklearn.ensemble import GradientBoostingClassifier
 
 #_logger = logging.getLogger(__name__)
 
-
+#('OneHotEncodingFeatures',pp.OneHotEncodingFeatures(variables=config.stringfeatures)),
 
 celcius = Pipeline(
 
@@ -19,7 +19,8 @@ celcius = Pipeline(
      ('MinMaxScalerTransform',pp.MinMaxScalerTransform(variables=config.numerical)),
 
 
-     ('OneHotEncodingFeatures',pp.OneHotEncodingFeatures(variables=config.stringfeatures)),
+
+
 
 
       ('GradientBoostingClassifier', GradientBoostingClassifier(criterion='friedman_mse', init=None,
@@ -35,6 +36,8 @@ celcius = Pipeline(
 
 
 )
+
+#print(celcius)
 #print(config.numerical)
 
 

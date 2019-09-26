@@ -25,15 +25,13 @@ def run_training() -> None:
         data[config.target],
         test_size=0.1,
         random_state=0)  # we are setting the seed here
-
-    y_train = y_train.replace({'<=50K': 0, '>50K': 1})
     y_test = y_test.replace({'<=50K': 0, '>50K': 1})
-
+    y_train = y_train.replace({'<=50K': 0, '>50K': 1})
     # transform the target
-    #print(y_train)
 
     pipeline.celcius.fit(X_train[config.features],
                             y_train)
+
 
     #_logger.info(f'saving model version: {_version}')
     save_pipeline(pipeline_to_persist=pipeline.celcius)

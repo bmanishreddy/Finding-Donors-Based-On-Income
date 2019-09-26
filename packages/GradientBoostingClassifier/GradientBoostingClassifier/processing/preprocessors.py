@@ -55,7 +55,7 @@ class MinMaxScalerTransform(BaseEstimator,TransformerMixin):
 #Encoding
 
 
-
+'''
 class OneHotEncodingFeatures(BaseEstimator,TransformerMixin):
     def __init__(self, variables=None) -> None:
 
@@ -75,9 +75,13 @@ class OneHotEncodingFeatures(BaseEstimator,TransformerMixin):
 
         X = pd.get_dummies(X[self.variables])
 
+        print(X)
 
 
         return X
+        
+        
+'''
 
 #Target into train test splits
 
