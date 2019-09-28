@@ -30,7 +30,7 @@ def test_prediction_endpoint_returns_prediction(flask_test_client):
 
     # When
     response = flask_test_client.post('/v1/predict/GradientBoostingClassifier',
-                                      json=post_json)
+                                      json=json.loads(post_json))
 
 
     # Then
@@ -41,5 +41,5 @@ def test_prediction_endpoint_returns_prediction(flask_test_client):
 
     response_version = response_json['version']
 
-    assert math.ceil(prediction) == 0
+    assert prediction == 'he makes less than 50 k '
     assert response_version == _version
