@@ -25,6 +25,8 @@ DATA_FILE = 'census.csv'
 target = 'income'
 TRAINED_MODEL_DIR = PACKAGE_ROOT / 'trained_models'
 
+TESTING_DATA_FILE = 'test.csv'
+
 #TRAINED_MODEL_DIR = PACKAGE_ROOT / 'trained_models'
 
 #numerical Variable
