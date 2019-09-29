@@ -1,0 +1,67 @@
+version: 2
+jobs:
+  test_GradientBoostingClassifier:
+    working_directory: ~/project
+    docker:
+      - image: circleci/python:3.7.2
+    steps:
+      - checkout
+      - run:
+          name: Runnning tests
+          command: |
+            virtualenv venv
+            . venv/bin/activate
+            pip install --upgrade pip
+            pip install -r packages/GradientBoostingClassifier/requirements.txt
+
+            py.test -vv packages/GradientBoostingClassifier/tests
+
+
+
+
+  test_ml_api:
+    working_directory: ~/project
+    docker:
+      - image: circleci/python:3.7.2
+    steps:
+      - checkout
+      - run:
+          name: Runnning tests
+          command: |
+            virtualenv venv
+            . venv/bin/activate
+            pip install --upgrade pip
+            pip install -r packages/ml_api/requirements.txt
+            py.test -vv packages/ml_api/tests
+
+  train_and_upload_GradientBoostingClassifier:
+    working_directory: ~/project
+    docker:
+      - image: circleci/python:3.7.2
+    steps:
+      - checkout
+      - run:
+          name: Setup env
+          command: |
+            virtualenv venv
+            . venv/bin/activate
+            pip install -r packages/GradientBoostingClassifier/requirements.txt
+      - run:
+          name: Publish model
+          command: |
+            . venv/bin/activate
+            chmod +x  ./scripts/publish_model.sh
+
+            PYTHONPATH=./packages/GradientBoostingClassifier python3 packages/GradientBoostingClassifier/GradientBoostingClassifier/train_pipeline.py
+            ./scripts/publish_model.sh ./packages/GradientBoostingClassifier/
+
+
+
+workflows:
+  version: 2
+  test-all:
+    jobs:
+      - test_GradientBoostingClassifier
+      - test_ml_api
+      - train_and_upload_GradientBoostingClassifier
+
