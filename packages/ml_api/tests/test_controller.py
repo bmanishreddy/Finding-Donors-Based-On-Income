@@ -13,7 +13,7 @@ def test_health_endpoint_returns_200(flask_test_client):
     # Then
     assert response.status_code == 200
 
-'''
+
 
 def test_prediction_endpoint_returns_prediction(flask_test_client):
     # Given
@@ -43,4 +43,3 @@ def test_prediction_endpoint_returns_prediction(flask_test_client):
 
     assert prediction == 'he makes less than 50 k '
     assert response_version == _version
-    '''

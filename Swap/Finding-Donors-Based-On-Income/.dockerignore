@@ -1,9 +1,0 @@
-jupyter_notebooks*
-*/env*
-*/venv*
-.circleci*
-packages/GradientBoostingClassifier
-*.env
-*.log
-.git
-.gitignore
