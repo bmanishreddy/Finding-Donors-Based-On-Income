@@ -1,4 +1,4 @@
-import math
+'''import math
 from GradientBoostingClassifier.predict import make_prediction
 from GradientBoostingClassifier.processing.data_management import load_dataset
 from GradientBoostingClassifier import __version__ as _version
@@ -26,4 +26,4 @@ def test_make_single_prediction():
     assert math.ceil(subject.get('predictions')[0]) == 0
 
 
-#test_make_single_prediction()
+#test_make_single_prediction()'''
