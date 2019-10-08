@@ -6,6 +6,18 @@ import json
 import math
 
 
+testobj = {
+
+ "age": 35,
+ "education-num": 13,
+ "capital-gain": 0.0,
+ "hours-per-week": 60,
+ "marital-status": "Married-civ-spouse",
+
+ "relationship": "Husband"
+}
+
+
 def test_health_endpoint_returns_200(flask_test_client):
     # When
     response = flask_test_client.get('/health')
@@ -21,16 +33,13 @@ def test_prediction_endpoint_returns_prediction(flask_test_client):
     # This is important as it makes it harder for the test
     # data versions to get confused by not spreading it
     # across packages.
-    test_data = load_dataset(file_name=model_config.TESTING_DATA_FILE)
-    post_json = test_data[0:1].to_json(orient='records')
-
-
-
+    #test_data = load_dataset(file_name=model_config.TESTING_DATA_FILE)
+    post_json = json.dumps(testobj)
 
 
     # When
     response = flask_test_client.post('/v1/predict/GradientBoostingClassifier',
-                                      json=json.loads(post_json))
+                                      json=post_json)
 
 
     # Then
