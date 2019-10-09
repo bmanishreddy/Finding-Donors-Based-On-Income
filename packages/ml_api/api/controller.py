@@ -22,7 +22,7 @@ def health():
 @prediction_app.route('/v1/predict/GradientBoostingClassifier', methods=['POST'])
 def predict():
     if request.method == 'POST':
-        json_data = request.get_json()
+        json_data = request.get_data()
         _logger.info(f'Inputs: {json_data}')
 
 
