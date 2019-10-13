@@ -49,5 +49,5 @@ def test_prediction_endpoint_returns_prediction(flask_test_client):
 
     response_version = response_json['version']
 
-    assert prediction == 'yes he makes over 50 k'
+    assert prediction == 'he makes less than 50 k '
     assert response_version == _version
