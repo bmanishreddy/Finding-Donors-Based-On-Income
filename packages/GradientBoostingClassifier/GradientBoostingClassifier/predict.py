@@ -85,7 +85,7 @@ def ObjConv(obj):
     else:
         relationship_Wife = 0
     final_res = [{
-        "Unnamed: 0": 0,
+
         "age": age,
         "education-num": education,
         "capital-gain": capital,
